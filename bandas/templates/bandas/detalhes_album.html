@@ -1,0 +1,35 @@
+{% extends 'bandas/layout.html' %}
+
+{% block title %}{{ album.titulo }}{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center;">{{ album.titulo }}</h1>
+    {% if album.capa %}
+        <p style="text-align: center;"><img src="{{ album.capa.url }}" alt="{{ album.titulo }}"></p>
+    {% else %}
+        <p style="text-align: center;">Nenhuma capa disponível para este álbum.</p>
+    {% endif %}
+    <p style="text-align: center;"> {{ album.ano_de_lancamento }}</p>
+
+    <h2 style="text-align: center;">Músicas:</h2>
+    <ul class="lista-item">
+        {% for musica in album.musica_set.all %}
+            <li style="margin-bottom: 10px;"><a href="{% url 'bandas:detalhes_musica' musica.id %}">{{ musica.nome }}</a></li>
+        {% endfor %}
+    </ul>
+    {% if request.user.is_authenticated and is_editor %}
+    <div class="back-button">
+        <a href="{% url 'bandas:edita_album' album.id %}">
+        <button>Editar informação do Álbum</button>
+        </a>
+        <a href="{% url 'bandas:apaga_album' album.id %}">
+        <button>Apagar Álbum</button>
+        </a>
+    </div>
+    {% endif %}
+    <p class = "back-button">
+        <a href="{% url 'bandas:detalhes_banda' album.banda.id %}" >
+        <button>Voltar para a Banda</button>
+        </a>
+    </p>
+{% endblock %}

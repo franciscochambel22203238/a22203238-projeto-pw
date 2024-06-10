@@ -1,0 +1,17 @@
+{% extends 'bandas/layout.html' %}
+
+{% block title %}Editar Álbum{% endblock %}
+
+{% block content %}
+    <h3>Editar Álbum</h3>
+
+    <form action="{% url 'bandas:edita_album' album.id %}" method="post" enctype='multipart/form-data'>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="form-buttons">
+            <button onclick="window.location.href='{% url 'bandas:album_page' album.id %}'">Cancelar</button>
+            <input type="submit">
+      </div>
+    </form>
+
+{% endblock %}

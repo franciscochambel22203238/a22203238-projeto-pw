@@ -1,0 +1,21 @@
+{% extends 'curso/layout.html' %}
+
+{% block title %}Criar Área Científica{% endblock %}
+
+{% block content %}
+    <h3>Nova Área Científica</h3>
+
+    <form action="" method="post" enctype='multipart/form-data'>
+    <!-- enctype deve ser definido se houver submissão de ficheiros ou imagens -->
+
+      {% csrf_token %}   <!-- obrigatório nos forms Django -->
+      <table>
+          {{ form }}   <!-- insere input para cada atributo da classe Área Científica, numa tabela -->
+      </table>
+      <div class="form-buttons">
+            <button onclick="window.location.href='{% url 'areasCientificas' %}'">Cancelar</button>
+            <input type="submit" value="Criar Área Científica">
+      </div>
+    </form>
+
+{% endblock %}

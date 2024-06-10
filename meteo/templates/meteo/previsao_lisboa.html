@@ -1,0 +1,85 @@
+{% extends 'meteo/layout.html' %}
+{% load static %}
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .detalhes-meteorologia {
+            margin-bottom: 40px;
+        }
+
+        .detalhes-meteorologia h1,
+        .detalhes-meteorologia h2 {
+            text-align: center;
+        }
+
+        .detalhes-meteorologia p {
+            margin-top: 20px;
+        }
+
+        .detalhes-meteorologia ul {
+            padding-left: 20px;
+        }
+
+        .detalhes-meteorologia ul li {
+            margin-top: 10px;
+        }
+
+        .detalhes-meteorologia img {
+            max-width: 150px;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .previsao-item {
+            border: 2px solid #007bff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            background-color: #e0f7ff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+{% block content %}
+    <title>Previsão Meteorológica para Lisboa</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <div class="detalhes-meteorologia">
+        <h1>Previsão Meteorológica para Lisboa</h1>
+    </div>
+    <div class="previsao-item">
+        <p><strong>Data:</strong> {{ data_previsao }}</p>
+        <p><strong>Temperatura Mínima:</strong> {{ temp_min }} °C</p>
+        <p><strong>Temperatura Máxima:</strong> {{ temp_max }} °C</p>
+        <p><strong>Descrição do Tempo:</strong> {{ descricao_tempo }}</p>
+        <img src="{% static icone_animated %}" alt="Ícone animado do tempo" class="weather-icon">
+    </div>
+    <a href="{% url 'previsao_tempo' %}">
+        <button>Ver Previsões para 5 Dias</button>
+    </a>
+{% endblock %}

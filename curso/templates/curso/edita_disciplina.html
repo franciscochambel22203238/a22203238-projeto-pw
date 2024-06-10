@@ -1,0 +1,17 @@
+{% extends 'curso/layout.html' %}
+
+{% block title %}Editar Disciplina{% endblock %}
+
+{% block content %}
+
+    <h3>Editar Disciplina</h3>
+
+    <form action="{% url 'edita_disciplina' disciplina.id %}" method="post" enctype='multipart/form-data'>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="form-buttons">
+            <button onclick="window.location.href='{% url 'disciplina_page' disciplina.id %}'">Cancelar</button>
+            <input type="submit">
+      </div>
+    </form>
+{% endblock %}

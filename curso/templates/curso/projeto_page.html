@@ -1,0 +1,69 @@
+{% extends 'curso/layout.html' %}
+
+{% block title %}{{ projeto.name }}{% endblock %}
+
+{% block content %}
+    <style>
+        .detalhes-projeto {
+            margin-bottom: 40px;
+        }
+
+        .detalhes-projeto h1,
+        .detalhes-projeto h2 {
+            text-align: center;
+        }
+
+        .detalhes-projeto p {
+            margin-top: 20px;
+        }
+
+        .detalhes-projeto ul {
+            padding-left: 20px;
+        }
+
+        .detalhes-projeto ul li {
+            margin-top: 10px;
+        }
+        .detalhes-projeto img {
+            max-width: 500px;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+
+    <div class="detalhes-projeto">
+        <h1>{{ projeto.name }}</h1>
+        <p><strong>Descrição:</strong> {{ projeto.description }}</p>
+        <p><strong>Conceitos Aplicados:</strong> {{ projeto.concepts_applied }}</p>
+        <p><strong>Tecnologias Utilizadas:</strong> {{ projeto.technologies_used }}</p>
+        <p><strong>Linguagens de Programação:</strong></p>
+        <ul>
+            {% for linguagem in projeto.programming_languages.all %}
+                <li>{{ linguagem.name }}</li>
+            {% endfor %}
+        </ul>
+        <img src="{{ projeto.image.url }}" alt="Imagem do Projeto" style="margin-top: 20px;">
+        {% if projeto.youtube_link %}
+            <p style="margin-top: 20px;"><strong>YouTube:</strong> <a href="{{ projeto.youtube_link }}">{{ projeto.youtube_link }}</a></p>
+        {% endif %}
+        {% if projeto.github_link %}
+            <p style="margin-top: 20px;"><strong>GitHub:</strong> <a href="{{ projeto.github_link }}">{{ projeto.github_link }}</a></p>
+        {% endif %}
+    </div>
+    {% if request.user.is_authenticated and is_editor%}
+    <div class="button-container">
+        <a href="{% url 'edita_projeto' projeto.id %}">
+            <button>Editar Projeto</button>
+        </a>
+        <a href="{% url 'apaga_projeto' projeto.id %}">
+            <button>Apagar Projeto</button>
+        </a>
+    </div>
+    {% endif %}
+    <div class="button-container">
+        <a href="{% url 'projetos' %}">
+            <button>Lista de Projetos</button>
+        </a>
+    </div>
+
+{% endblock %}

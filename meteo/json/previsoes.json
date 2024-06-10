@@ -1,0 +1,164 @@
+{
+  "previsoes": [
+    {
+      "cidade": "Lisboa",
+      "data": "2024-06-06",
+      "temp_min": 15,
+      "temp_max": 25,
+      "descricao_tempo": "Ensolarado",
+      "precipitacao": 0
+    },
+    {
+      "cidade": "Porto",
+      "data": "2024-06-06",
+      "temp_min": 13,
+      "temp_max": 22,
+      "descricao_tempo": "Nublado",
+      "precipitacao": 2
+    },
+    {
+      "cidade": "Coimbra",
+      "data": "2024-06-06",
+      "temp_min": 14,
+      "temp_max": 24,
+      "descricao_tempo": "Parcialmente Nublado",
+      "precipitacao": 1
+    },
+    {
+      "cidade": "Faro",
+      "data": "2024-06-06",
+      "temp_min": 18,
+      "temp_max": 28,
+      "descricao_tempo": "Ensolarado",
+      "precipitacao": 0
+    },
+    {
+      "cidade": "Braga",
+      "data": "2024-06-06",
+      "temp_min": 12,
+      "temp_max": 21,
+      "descricao_tempo": "Chuva",
+      "precipitacao": 5
+    },
+    {
+      "cidade": "Aveiro",
+      "data": "2024-06-06",
+      "temp_min": 14,
+      "temp_max": 23,
+      "descricao_tempo": "Nublado",
+      "precipitacao": 3
+    },
+    {
+      "cidade": "Évora",
+      "data": "2024-06-06",
+      "temp_min": 17,
+      "temp_max": 27,
+      "descricao_tempo": "Ensolarado",
+      "precipitacao": 0
+    },
+    {
+      "cidade": "Setúbal",
+      "data": "2024-06-06",
+      "temp_min": 16,
+      "temp_max": 26,
+      "descricao_tempo": "Parcialmente Nublado",
+      "precipitacao": 1
+    },
+    {
+      "cidade": "Leiria",
+      "data": "2024-06-06",
+      "temp_min": 15,
+      "temp_max": 25,
+      "descricao_tempo": "Nublado",
+      "precipitacao": 2
+    },
+    {
+      "cidade": "Viseu",
+      "data": "2024-06-06",
+      "temp_min": 13,
+      "temp_max": 22,
+      "descricao_tempo": "Chuva",
+      "precipitacao": 4
+    },
+    {
+      "cidade": "Guarda",
+      "data": "2024-06-06",
+      "temp_min": 11,
+      "temp_max": 20,
+      "descricao_tempo": "Chuva",
+      "precipitacao": 6
+    },
+    {
+      "cidade": "Castelo Branco",
+      "data": "2024-06-06",
+      "temp_min": 16,
+      "temp_max": 26,
+      "descricao_tempo": "Parcialmente Nublado",
+      "precipitacao": 1
+    },
+    {
+      "cidade": "Portalegre",
+      "data": "2024-06-06",
+      "temp_min": 15,
+      "temp_max": 25,
+      "descricao_tempo": "Ensolarado",
+      "precipitacao": 0
+    },
+    {
+      "cidade": "Viana do Castelo",
+      "data": "2024-06-06",
+      "temp_min": 13,
+      "temp_max": 22,
+      "descricao_tempo": "Nublado",
+      "precipitacao": 3
+    },
+    {
+      "cidade": "Vila Real",
+      "data": "2024-06-06",
+      "temp_min": 12,
+      "temp_max": 21,
+      "descricao_tempo": "Chuva",
+      "precipitacao": 5
+    },
+    {
+      "cidade": "Bragança",
+      "data": "2024-06-06",
+      "temp_min": 11,
+      "temp_max": 20,
+      "descricao_tempo": "Chuva",
+      "precipitacao": 6
+    },
+    {
+      "cidade": "Beja",
+      "data": "2024-06-06",
+      "temp_min": 17,
+      "temp_max": 27,
+      "descricao_tempo": "Ensolarado",
+      "precipitacao": 0
+    },
+    {
+      "cidade": "Santarém",
+      "data": "2024-06-06",
+      "temp_min": 16,
+      "temp_max": 26,
+      "descricao_tempo": "Parcialmente Nublado",
+      "precipitacao": 1
+    },
+    {
+      "cidade": "Madeira",
+      "data": "2024-06-06",
+      "temp_min": 19,
+      "temp_max": 28,
+      "descricao_tempo": "Ensolarado",
+      "precipitacao": 0
+    },
+    {
+      "cidade": "Açores",
+      "data": "2024-06-06",
+      "temp_min": 18,
+      "temp_max": 27,
+      "descricao_tempo": "Nublado",
+      "precipitacao": 2
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{% extends 'curso/layout.html' %}
+
+{% block title %}Disciplinas{% endblock %}
+
+{% block content %}
+    <h1>Disciplinas ({{disciplinas|length}})</h1>
+    <ul class="lista-item">
+        {% for disciplina in disciplinas %}
+            <li>
+                <a href="{% url 'disciplina_page' disciplina.id %}">{{ disciplina.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% if request.user.is_authenticated and is_editor%}
+    <div class="button-container">
+        <a href="{% url 'nova_disciplina' %}">
+            <button>Criar nova Disciplina</button>
+        </a>
+    </div>
+    {% endif %}
+{% endblock %}

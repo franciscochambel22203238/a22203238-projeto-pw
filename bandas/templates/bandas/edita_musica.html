@@ -1,0 +1,17 @@
+{% extends 'bandas/layout.html' %}
+
+{% block title %}Editar Música{% endblock %}
+
+{% block content %}
+    <h3>Editar Música</h3>
+
+    <form action="{% url 'bandas:edita_musica' musica.id %}" method="post" enctype='multipart/form-data'>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="form-buttons">
+            <button onclick="window.location.href='{% url 'bandas:musica_page' musica.id %}'">Cancelar</button>
+            <input type="submit">
+      </div>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'curso/layout.html' %}
+
+{% block title %}Cursos{% endblock %}
+
+{% block content %}
+    <h1>Cursos ({{cursos|length}})</h1>
+    <ul class="lista-item">
+        {% for curso in cursos %}
+            <li>
+                <a href="{% url 'curso' curso.id %}">{{ curso.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% if request.user.is_authenticated and is_editor %}
+    <div class="button-container">
+        <a href="{% url 'novo_curso' %}">
+            <button>Criar novo Curso</button>
+        </a>
+    </div>
+    {% endif %}
+{% endblock %}

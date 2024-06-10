@@ -1,0 +1,24 @@
+{
+  "cidades": [
+    {"nome": "Lisboa"},
+    {"nome": "Porto"},
+    {"nome": "Coimbra"},
+    {"nome": "Faro"},
+    {"nome": "Braga"},
+    {"nome": "Aveiro"},
+    {"nome": "Évora"},
+    {"nome": "Setúbal"},
+    {"nome": "Leiria"},
+    {"nome": "Viseu"},
+    {"nome": "Guarda"},
+    {"nome": "Castelo Branco"},
+    {"nome": "Portalegre"},
+    {"nome": "Viana do Castelo"},
+    {"nome": "Vila Real"},
+    {"nome": "Bragança"},
+    {"nome": "Beja"},
+    {"nome": "Santarém"},
+    {"nome": "Madeira"},
+    {"nome": "Açores"}
+  ]
+}

@@ -1,0 +1,21 @@
+{% extends 'bandas/layout.html' %}
+
+{% block title %}Criar Álbum{% endblock %}
+
+{% block content %}
+    <h3>Novo Álbum</h3>
+
+    <form action="" method="post" enctype='multipart/form-data'>
+    <!-- enctype deve ser definido se houver submissão de ficheiros ou imagens -->
+
+      {% csrf_token %}   <!-- obrigatório nos forms Django -->
+      <table>
+          {{ form }}   <!-- insere input para cada atributo da classe Autor, numa tabela -->
+      </table>
+      <div class="form-buttons">
+            <button onclick="window.location.href='{% url 'bandas:lista_albuns' %}'">Cancelar</button>
+            <input type="submit" value="Criar Álbum">
+      </div>
+    </form>
+
+{% endblock %}

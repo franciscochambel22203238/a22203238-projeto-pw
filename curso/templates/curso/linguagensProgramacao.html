@@ -1,0 +1,21 @@
+{% extends 'curso/layout.html' %}
+
+{% block title %}Linguagens de Programação{% endblock %}
+
+{% block content %}
+    <h1>Linguagens de Programação ({{linguagensProgramacao|length}})</h1>
+    <ul class="lista-item2">
+        {% for linguagemProgramacao in linguagensProgramacao %}
+            <li>
+                <p>{{ linguagemProgramacao }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    {% if request.user.is_authenticated and is_editor%}
+    <div class="button-container">
+        <a href="{% url 'nova_linguagemProgramacao' %}">
+            <button>Criar nova Linguagem de Programação</button>
+        </a>
+    </div>
+    {% endif %}
+{% endblock %}

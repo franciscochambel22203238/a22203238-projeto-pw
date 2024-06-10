@@ -1,0 +1,20 @@
+{% extends 'curso/layout.html' %}
+
+{% block title %}Criar Linguagem de Programação{% endblock %}
+
+{% block content %}
+    <h3>Nova Linguagem de Programação</h3>
+
+    <form action="" method="post" enctype='multipart/form-data'>
+    <!-- enctype deve ser definido se houver submissão de ficheiros ou imagens -->
+
+      {% csrf_token %}   <!-- obrigatório nos forms Django -->
+      <table>
+          {{ form }}   <!-- insere input para cada atributo da classe Linguagem de Programação, numa tabela -->
+      </table>
+      <div class="form-buttons">
+            <button onclick="window.location.href='{% url 'linguagensProgramacao' %}'">Cancelar</button>
+            <input type="submit" value="Criar Linguagem de Programação">
+      </div>
+    </form>
+{% endblock %}

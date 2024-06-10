@@ -1,0 +1,21 @@
+{% extends 'curso/layout.html' %}
+
+{% block title %}Professores{% endblock %}
+
+{% block content %}
+    <h1>Professores ({{professores|length}})</h1>
+    <ul class="lista-item2">
+        {% for professor in professores %}
+            <li>
+                <p>{{ professor }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    {% if request.user.is_authenticated and is_editor%}
+    <div class="button-container">
+        <a href="{% url 'novo_professor' %}">
+            <button>Adicionar novo Professor</button>
+        </a>
+    </div>
+    {% endif %}
+{% endblock %}

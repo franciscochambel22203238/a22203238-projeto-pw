@@ -1,0 +1,21 @@
+{% extends 'curso/layout.html' %}
+
+{% block title %}Projetos{% endblock %}
+
+{% block content %}
+    <h1>Projetos ({{projetos|length}})</h1>
+    <ul class="lista-item">
+        {% for projeto in projetos %}
+            <li>
+                <a href="{% url 'projeto_page' projeto.id %}">{{ projeto.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% if request.user.is_authenticated and is_editor%}
+    <div class="button-container">
+        <a href="{% url 'novo_projeto' %}">
+            <button>Criar novo Projeto</button>
+        </a>
+    </div>
+    {% endif %}
+{% endblock %}

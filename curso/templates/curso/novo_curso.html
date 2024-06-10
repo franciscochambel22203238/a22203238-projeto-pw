@@ -1,0 +1,21 @@
+{% extends 'curso/layout.html' %}
+
+{% block title %}Criar Curso{% endblock %}
+
+{% block content %}
+    <h3>Novo Curso</h3>
+
+    <form action="" method="post" enctype='multipart/form-data'>
+    <!-- enctype deve ser definido se houver submissão de ficheiros ou imagens -->
+
+      {% csrf_token %}   <!-- obrigatório nos forms Django -->
+      <table>
+          {{ form }}   <!-- insere input para cada atributo da classe Curso, numa tabela -->
+      </table>
+      <div class="form-buttons">
+            <button onclick="window.location.href='{% url 'cursos' %}'">Cancelar</button>
+            <input type="submit" value="Criar Curso">
+      </div>
+    </form>
+
+{% endblock %}

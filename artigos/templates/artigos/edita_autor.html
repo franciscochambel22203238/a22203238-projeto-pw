@@ -1,0 +1,16 @@
+{% extends 'artigos/layout.html' %}
+
+{% block title %}Editar Autor{% endblock %}
+
+{% block content %}
+    <h3>Editar Autor</h3>
+
+    <form action="{% url 'artigos:edita_autor' autor.id %}" method="post" enctype='multipart/form-data'>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="form-buttons">
+          <button onclick="window.location.href='{% url 'artigos:detalhes_autor' autor.id %}'">Cancelar</button>
+          <input type="submit">
+      </div>
+    </form>
+{% endblock %}

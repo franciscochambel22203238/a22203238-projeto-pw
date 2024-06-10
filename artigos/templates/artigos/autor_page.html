@@ -1,0 +1,101 @@
+{% extends 'artigos/layout.html' %}
+
+{% block title %}{{ autor.user }}{% endblock %}
+
+{% block content %}
+<style>
+    .section-container {
+    border: 2px solid #4CAF50;
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.section-container h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.section-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.section-container li {
+    margin-bottom: 10px;
+}
+.comentario-item {
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.comentario-autor {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.comentario-data {
+    color: #888;
+    font-size: 0.9em;
+}
+
+.comentario-texto {
+    margin: 0;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+    </style>
+
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <h2>{{ autor.user }}</h2>
+    <p><strong>Biografia:</strong> {{ autor.bio }}</p>
+
+    <div class="section-container">
+        <h2>Ratings</h2>
+        <ul>
+            {% for rating in autor.rating_set.all %}
+            <p><strong>{{ rating.artigo.titulo }}</strong> - {{ rating.valor }}</p>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="section-container">
+        <h2>Comentários do Autor</h2>
+        <ul>
+            {% for comentario in autor.comentario_set.all %}
+            <li>
+                <div class="comentario-item">
+                    <p><strong>{{ comentario.artigo.titulo }} - ({{comentario.artigo.autor.user}})</strong></p>
+                    <p class="comentario-autor">{{ comentario.autor.user }}</p>
+                    <p class="comentario-data">{{ comentario.data_comentario }}</p>
+                    <p class="comentario-texto">{{ comentario.texto }}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    {% if request.user.is_authenticated and is_editor %}
+    <div class="button-container">
+        <a href="{% url 'artigos:edita_autor' autor.id %}">
+            <button>Editar informação do Autor</button>
+        </a>
+        <a href="{% url 'artigos:apaga_autor' autor.id %}">
+            <button>Apagar Autor</button>
+        </a>
+    </div>
+    {% endif %}
+
+    <div class="button-container">
+        <a href="{% url 'artigos:detalhes_artigo' artigo_id=artigo.id %}">
+            <button>Voltar para o Artigo</button>
+        </a>
+    </div>
+{% endblock %}

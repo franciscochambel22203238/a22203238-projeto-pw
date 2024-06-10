@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ festival.nome }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        h2 {
+            color: #555;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .back-link {
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #777;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Festivais</h2>
+
+    <h1>{{ festival.nome }}</h1>
+    {% if festival.foto %}
+        <img src="{{ festival.foto.url }}" alt="{{ festival.nome }}">
+    {% else %}
+        <p>Sem foto disponível</p>
+    {% endif %}
+    <p>Data: {{ festival.data_inicio }} - {{ festival.data_fim }}</p>
+    <p>Localização: {{ festival.localizacao.nome }}, {{ festival.localizacao.cidade }}, {{ festival.localizacao.pais }}</p>
+    <p>Bandas: {% for banda in festival.bandas.all %}{{ banda.nome }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+
+    <div class="back-link">
+        <a href="{% url 'festivais_list' %}">Voltar para a lista de festivais</a>
+    </div>
+</div>
+
+<footer>
+    © 2024
+</footer>
+
+</body>
+</html>

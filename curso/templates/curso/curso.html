@@ -1,0 +1,45 @@
+{% extends 'curso/layout.html' %}
+
+{% block title %}{{ curso.name }}{% endblock %}
+
+{% block content %}
+    <div>
+        <h1>{{ curso.name }}</h1>
+        <p><strong>Apresentação:</strong></p>
+        <p>{{ curso.presentation }}</p>
+        <p><strong>Objetivos:</strong></p>
+        <p>{{ curso.objectives }}</p>
+        <p><strong>Competências:</strong></p>
+        <p>{{ curso.competences }}</p>
+        <p><strong>Áreas Científicas:</strong></p>
+        <ul>
+            {% for areaCientifica in curso.scientific_areas.all %}
+                <li>{{ areaCientifica.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div style="margin-top: 40px; text-align: center;">
+       <p><strong>Disciplinas</strong></p>
+    </div>
+        <ul class="lista-item">
+            {% for disciplina in disciplinas %}
+                <li><a href="{% url 'disciplina' course_id=curso.id discipline_id=disciplina.id %}">{{ disciplina.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% if request.user.is_authenticated %}
+    <div class="button-container">
+        <a href="{% url 'edita_curso' curso.id %}">
+            <button>Editar Curso</button>
+        </a>
+        <a href="{% url 'apaga_curso' curso.id %}">
+            <button>Apagar Curso</button>
+        </a>
+    </div>
+    {% endif %}
+    <div class="button-container">
+        <a href="{% url 'cursos' %}">
+            <button>Voltar para a lista de Cursos</button>
+        </a>
+    </div>
+{% endblock %}

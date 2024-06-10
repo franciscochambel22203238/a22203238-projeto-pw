@@ -1,0 +1,155 @@
+        h1 {
+            text-align: center;
+        }
+        .back-button {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-button a {
+            text-decoration: none;
+        }
+
+        .back-button button {
+            padding: 10px 20px;
+            background-color: #ff4c4c;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button button:hover {
+            background-color: #b33a3a;
+        }
+
+        body {
+            font-family: 'Oswald', sans-serif;
+            font-optical-sizing: auto;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #ff4c4c;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+        }
+        .auth-buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        .auth-buttons a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            background-color: #ff4c4c;
+            transition: background-color 0.3s ease;
+        }
+        .auth-buttons a:hover {
+            background-color: #b33a3a;
+        }
+        .username {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            margin: 0;
+            text-decoration: underline;
+        }
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        header nav ul li {
+            display: inline;
+        }
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+            background-color: #ff4c4c;
+        }
+        header nav ul li a:hover {
+            background-color: #b33a3a;
+        }
+        .lista-item {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .lista-item li {
+            margin: 5px 10px;
+            padding: 5px 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        .lista-item li a {
+            text-decoration: none;
+            color: #ff4c4c;
+        }
+
+        .lista-item li a:hover {
+            text-decoration: underline;
+        }
+        .welcome-button {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .welcome-button a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            background-color: #ff4c4c;
+            transition: background-color 0.3s ease;
+        }
+        .welcome-button a:hover {
+            background-color: #b33a3a;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        .form-buttons button,
+        .form-buttons input[type="submit"] {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        background-color: #ff4c4c;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        }
+
+        .form-buttons button:hover,
+        .form-buttons input[type="submit"]:hover {
+          background-color: #b33a3a;
+        }
+        footer {
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: auto;
+        }

@@ -1,0 +1,255 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Previsão do Tempo{% endblock %}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #eaeaea;
+            color: #333;
+        }
+        nav {
+            background-color: #2196F3;
+            color: #fff;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .nav-left, nav .nav-right {
+            display: flex;
+            align-items: center;
+        }
+        nav .nav-left a, nav .nav-right a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 15px;
+            font-size: 16px;
+        }
+        nav .nav-left a:hover, nav .nav-right a:hover {
+            text-decoration: underline;
+        }
+        nav .nav-left {
+            margin-left: 20px;
+        }
+        nav .nav-right {
+            margin-right: 20px;
+        }
+        nav .nav-right button {
+            background-color: #fff;
+            color: #2196F3;
+            border: 1px solid #2196F3;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav .nav-right button:hover {
+            background-color: #2196F3;
+            color: #fff;
+        }
+        .nav-right span {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .nav-right a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s;
+        }
+        .nav-right a:hover {
+            color: #0056b3;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 100px);
+            padding: 20px;
+            text-align: center;
+        }
+        .container h1 {
+            margin-bottom: 20px;
+            color: #2196F3;
+        }
+        .detalhes-meteorologia p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        .detalhes-meteorologia ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .detalhes-meteorologia ul li {
+            margin-top: 10px;
+        }
+        .detalhes-meteorologia img {
+            max-width: 100px;
+            height: auto;
+            margin-top: 20px;
+        }
+        .previsao-item {
+            border: 2px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #2196F3;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #1976D2;
+        }
+        #data-hora-atual {
+            margin-right: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <div id="data-hora-atual"></div>
+        </div>
+        <div class="nav-left">
+            <a href="{% url 'portfolio:landing_page' %}">Porfólio</a>
+            <a href="{% url 'welcome' %}">Menu</a>
+        </div>
+        <div class="nav-right">
+            {% if request.user.is_authenticated %}
+            <span><strong>{{ request.user.username }}</strong></span>
+            <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+            <a href="{% url 'registo' %}">Registar</a>
+            <a href="{% url 'login' %}">Login</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        <h1>Previsão do Tempo</h1>
+
+        <form id="cidade-form">
+            <label for="cidade">Selecione a cidade:</label>
+            <select name="cidade" id="cidade"></select>
+        </form>
+
+        <div id="previsao-detalhes" class="detalhes-meteorologia"></div>
+        {% endblock %}
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            let weatherTypes = {};
+
+            function carregarWeatherTypes() {
+                return $.getJSON('https://api.ipma.pt/open-data/weather-type-classe.json', function(data) {
+                    data.data.forEach(function(item) {
+                        weatherTypes[item.idWeatherType] = item.descWeatherTypePT;
+                    });
+                });
+            }
+
+            function carregarCidades() {
+                $.getJSON('https://api.ipma.pt/open-data/distrits-islands.json', function(data) {
+                    var cidades = data.data;
+                    var cidadesHtml = '';
+
+                    cidades.forEach(function(cidade) {
+                        cidadesHtml += `<option value="${cidade.globalIdLocal}">${cidade.local}</option>`;
+                    });
+
+                    $('#cidade').html(cidadesHtml);
+
+                    // Carrega a previsão da primeira cidade na lista
+                    var primeiraCidadeId = cidades[0].globalIdLocal;
+                    buscarPrevisao(primeiraCidadeId, cidades[0].local);
+                }).fail(function() {
+                    $('#previsao-detalhes').html('<p>Erro ao carregar a lista de cidades.</p>');
+                });
+            }
+
+            function buscarPrevisao(cidadeId, cidadeNome) {
+                var ipmaUrl = `https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/${cidadeId}.json`;
+
+                $.getJSON(ipmaUrl, function(data) {
+                    var previsoes = data.data;
+                    var previsoesHtml = '';
+
+                    previsoes.forEach(function(previsao) {
+                        var dataFormatada = new Date(previsao.forecastDate).toLocaleDateString('pt-PT');
+                        var descricaoTempo = weatherTypes[previsao.idWeatherType] || 'Descrição não disponível';
+                        var tempMin = previsao.tMin;
+                        var tempMax = previsao.tMax;
+                        var idWeatherTypeFormatado = previsao.idWeatherType.toString().padStart(2, '0');
+                        var icone = `/static/meteo/w_ic_d_${idWeatherTypeFormatado}anim.svg`;
+
+                        previsoesHtml += `
+                            <div class="previsao-item">
+                                <p><strong>Data:</strong> ${dataFormatada}</p>
+                                <p><strong>Temperatura Mínima:</strong> ${tempMin} °C</p>
+                                <p><strong>Temperatura Máxima:</strong> ${tempMax} °C</p>
+                                <p><strong>Descrição do Tempo:</strong> ${descricaoTempo}</p>
+                                <img src="${icone}" style="width: 50px; height: 50px;">
+                            </div>
+                        `;
+                    });
+
+                    $('#previsao-detalhes').html(`
+                        <h2>Previsão para ${cidadeNome} nos próximos 5 dias</h2>
+                        ${previsoesHtml}
+                    `);
+                }).fail(function() {
+                    $('#previsao-detalhes').html('<p>Erro ao obter os dados da previsão do tempo.</p>');
+                });
+            }
+
+            $('#cidade').change(function() {
+                var cidadeId = $(this).val();
+                var cidadeNome = $("#cidade option:selected").text();
+                if (cidadeId) {
+                    buscarPrevisao(cidadeId, cidadeNome);
+                } else {
+                    $('#previsao-detalhes').empty();
+                }
+            });
+
+            function mostrarDataHoraAtual() {
+                var dataHoraAtual = new Date();
+                var dia = dataHoraAtual.getDate().toString().padStart(2, '0');
+                var mes = (dataHoraAtual.getMonth() + 1).toString().padStart(2, '0'); // Mês começa do zero
+                var ano = dataHoraAtual.getFullYear();
+                var hora = dataHoraAtual.getHours().toString().padStart(2, '0');
+                var minutos = dataHoraAtual.getMinutes().toString().padStart(2, '0');
+                var segundos = dataHoraAtual.getSeconds().toString().padStart(2, '0');
+                var dataHoraFormatada = `${dia}/${mes}/${ano} ${hora}:${minutos}:${segundos}`;
+                $('#data-hora-atual').text(dataHoraFormatada);
+            }
+
+            setInterval(mostrarDataHoraAtual, 1000);
+
+            carregarWeatherTypes().then(carregarCidades);
+        });
+    </script>
+</body>
+</html>

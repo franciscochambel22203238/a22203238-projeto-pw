@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Festivais</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        h2 {
+            color: #555;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #777;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Festivais</h1>
+    {% for localizacao in localizacoes %}
+        <h2>{{ localizacao.nome }}</h2>
+        <ul>
+        {% for festival in localizacao.festival_set.all %}
+            <li>
+                <a href="{% url 'festival_detail' festival.id %}">{{ festival.nome }}</a>
+                <br>
+                Bandas: {% for banda in festival.bandas.all %}{{ banda.nome }}{% if not forloop.last %}, {% endif %}{% endfor %}
+            </li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+</div>
+
+<footer>
+    © 2024
+</footer>
+
+</body>
+</html>

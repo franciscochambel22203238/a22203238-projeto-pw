@@ -1,0 +1,17 @@
+{% extends 'curso/layout.html' %}
+
+{% block title %}Editar Projeto{% endblock %}
+
+{% block content %}
+    <h3>Editar Projeto</h3>
+
+    <form action="{% url 'edita_projeto' projeto.id %}" method="post" enctype='multipart/form-data'>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="form-buttons">
+            <button onclick="window.location.href='{% url 'projeto_page' projeto.id %}'">Cancelar</button>
+            <input type="submit">
+      </div>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #bbb; /* Light background color for body */
+            color: white;
+        }
+        .content {
+            background-color: rgba(0, 0, 0, 0.7); /* Gray background color for container */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .button-container a {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button-courses {
+            background-color: #6c757d; /* Cursos button color */
+        }
+        .button-courses:hover {
+            background-color: #5a6268; /* Cursos hover color */
+        }
+        .button-bands {
+            background-color: #6c757d; /* Bandas button color */
+        }
+        .button-bands:hover {
+            background-color: #5a6268; /* Bandas hover color */
+        }
+        .button-articles {
+            background-color: #6c757d; /* Artigos button color */
+        }
+        .button-articles:hover {
+            background-color: #5a6268; /* Artigos hover color */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div>
+           {% if request.user.is_authenticated %}
+            <h3>Bem-Vindo, {{ request.user.first_name }} {{ request.user.last_name }}</h3>
+            <p><strong>Username:</strong> @{{request.user.username}}</p>
+            <p><strong>Email:</strong> {{request.user.email}}</p>
+            <p><button onclick="window.location.href='{% url 'logout' %}'">Logout</button></p>
+           {% else %}
+            <h3>Menu</h3>
+            <button onclick="window.location.href='{% url 'registo' %}'">Registo</button>
+            <button onclick="window.location.href='{% url 'login' %}'">Login</button>
+           {% endif %}
+        </div>
+        <div class="button-container">
+            <a href="{% url 'artigos:lista_artigos' %}" class="button-articles">Artigos</a>
+            <a href="{% url 'bandas:lista_bandas' %}" class="button-bands">Bandas</a>
+            <a href="{% url 'cursos' %}" class="button-courses">Cursos</a>
+            <a href="{% url 'previsao_tempo' %}" class="button-courses">Meteo</a>
+        </div>
+        <div class="button-container">
+            <a href="{% url 'portfolio:landing_page' %}" class="button-articles">Página Principal</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #bbb;
+            color: white;
+        }
+        .content {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .button-container a {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button-container:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div>
+            <h3><i class="fas fa-user"></i> {{ request.user.username }}</h2>
+            <p><strong>Nome:</strong> {{ request.user.first_name }} {{ request.user.last_name }}</>
+            <p><strong>Email:</strong> {{request.user.email}}</p>
+            <p><button onclick="window.location.href='{% url 'logout' %}'">Logout</button></p>
+        </div>
+        <div class="button-container">
+            <a href="{% url 'portfolio:landing_page' %}" class="button-articles">Página Principal</a>
+        </div>
+    </div>
+</body>

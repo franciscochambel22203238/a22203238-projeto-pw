@@ -1,0 +1,48 @@
+{% extends 'curso/layout.html' %}
+
+{% block title %}{{ disciplina.name }}{% endblock %}
+
+{% block content %}
+    <div class="detalhes-disciplina">
+        <h1>{{ disciplina.name }}</h1>
+        <p><strong>Ano:</strong> {{ disciplina.year }}</p>
+        <p><strong>Semestre:</strong> {{ disciplina.semester }}</p>
+        <p><strong>ECTS:</strong> {{ disciplina.ects }}</p>
+        <p><strong>Código Curricular:</strong> {{ disciplina.curricularIUnitReadableCode }}</p>
+        <p><strong>Área Científica:</strong> {{ disciplina.scientific_area.name }}</p>
+        <p><strong>Professores:</strong></p>
+        <ul>
+            {% for teacher in disciplina.teachers.all %}
+                <li>{{ teacher.name }}</li>
+            {% empty %}
+                <li>Nenhum professor atribuído</li>
+            {% endfor %}
+        </ul>
+
+        <p><strong>Projetos:</strong></p>
+        <ul>
+            {% for projeto in disciplina.projects.all %}
+                <li><a href="{% url 'projeto' course_id=curso.id discipline_id=disciplina.id project_id=projeto.id %}">{{ projeto.name }}</a></li>
+            {% empty %}
+                <li>Sem projetos recentes</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    {% if request.user.is_authenticated and is_editor %}
+    <div class="button-container">
+        <a href="{% url 'edita_disciplina' disciplina.id %}">
+            <button>Editar Disciplina</button>
+        </a>
+        <a href="{% url 'apaga_disciplina' disciplina.id %}">
+            <button>Apagar Disciplina</button>
+        </a>
+    </div>
+    {% endif %}
+
+    <div class="button-container">
+        <a href="{% url 'curso' curso_id=curso.id %}">
+            <button>Voltar para o Curso</button>
+        </a>
+    </div>
+{% endblock %}

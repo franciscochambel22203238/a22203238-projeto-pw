@@ -1,0 +1,21 @@
+{% extends 'curso/layout.html' %}
+
+{% block title %}Áreas Científicas{% endblock %}
+
+{% block content %}
+    <h1>Áreas Científicas ({{areasCientificas|length}})</h1>
+    <ul class="lista-item2">
+        {% for areaCientifica in areasCientificas %}
+            <li>
+                <p>{{ areaCientifica }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    {% if request.user.is_authenticated and is_editor%}
+    <div class="button-container">
+        <a href="{% url 'nova_areaCientifica' %}">
+            <button>Criar nova Área Científica</button>
+        </a>
+    </div>
+    {% endif %}
+{% endblock %}

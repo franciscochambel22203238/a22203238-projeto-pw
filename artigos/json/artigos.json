@@ -1,0 +1,39 @@
+{
+  "artigos": [
+    {
+      "titulo": "A poesia interior de Fernando Pessoa",
+      "conteudo": "Explorando os mistérios e a profundidade dos versos de Fernando Pessoa, descobrimos um universo de reflexão e autoconhecimento.",
+      "data_publicacao": "2024-04-12",
+      "autor": "Fernando Pessoa",
+      "imagem": "fernando_pessoa.jpg"
+    },
+    {
+      "titulo": "Os segredos do sucesso de Cristiano Ronaldo",
+      "conteudo": "Conheça os princípios e a mentalidade por trás da jornada de sucesso de Cristiano Ronaldo, um ícone do esporte mundial.",
+      "data_publicacao": "2024-04-12",
+      "autor": "Cristiano Ronaldo",
+      "imagem": "cristiano_ronaldo.jpg"
+    },
+    {
+      "titulo": "A filosofia de vida de The Rock",
+      "conteudo": "Descubra como Dwayne 'The Rock' Johnson transcende os limites do entretenimento e inspira milhões com sua determinação e positividade.",
+      "data_publicacao": "2024-04-12",
+      "autor": "The Rock",
+      "imagem": "the_rock.jpg"
+    },
+    {
+      "titulo": "A voz eterna de Amália Rodrigues",
+      "conteudo": "Explorando o legado musical de Amália Rodrigues, uma das maiores fadistas de todos os tempos, e sua influência duradoura na cultura portuguesa.",
+      "data_publicacao": "2024-04-12",
+      "autor": "Amália Rodrigues",
+      "imagem": "amalia_rodrigues.jpg"
+    },
+    {
+      "titulo": "Reflexões sobre a vida moderna",
+      "conteudo": "Em meio à agitação do mundo moderno, buscamos encontrar significado e propósito em nossas jornadas individuais.",
+      "data_publicacao": "2024-04-12",
+      "autor": "Francisco Chambel",
+      "imagem": "perfil.jpg"
+    }
+  ]
+}

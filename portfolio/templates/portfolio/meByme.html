@@ -1,0 +1,56 @@
+{% extends 'portfolio/landing_page.html' %}
+
+{% load static %}
+
+{% block title %}MeByMe - Curriculum Vitae{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="header2">
+        <h1>Francisco Chambel</h1>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Quem sou eu?</h2>
+        <p>O meu nome é Francisco Chambel, tenho 20 anos e estudo na Universidade Lusófona de Humanidades e Tecnologias. Atualmente encontro-me no segundo ano em LIG (Licenciatura de Informática de Gestão).</p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Interesses</h2>
+        <p>Tenho interesse numa grande variedade de tópicos, desde desporto e atividades físicas até à tecnologia e gestão. Gosto de Rugby, ginásio e japonesa também.</p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Aptidões e Competências</h2>
+        <div class="section-content">
+            <div class="info-card">
+                <h3>Organização e Planeamento</h3>
+                <p>Sou uma pessoa que planeia com antecedência os meus afazeres e tenho uma grande capacidade de organização.</p>
+            </div>
+            <div class="info-card">
+                <h3>Aprendizagem Rápida</h3>
+                <p>Tenho bastante facilidade em aprender novos conteúdos.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Experiência</h2>
+        <div class="section-content">
+            <div class="info-card">
+                <h3>My Camp</h3>
+                <p>Trabalhei um mês como instrutor num campo de férias, ganhei um grande sentido de responsabilidade e paciência.</p>
+            </div>
+            <div class="info-card">
+                <h3>Auchan</h3>
+                <p>Trabalhei também durante uns bons meses como caixa num Auchan perto de onde moro.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="categoria-aplicacoes">
+    <ul>
+        <li><a href="{% url 'portfolio:landing_page' %}">Voltar à Página Principal</a></li>
+    </ul>
+</div>
+{% endblock %}

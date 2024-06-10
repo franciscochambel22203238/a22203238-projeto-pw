@@ -1,0 +1,127 @@
+{% extends 'artigos/layout.html' %}
+
+{% block title %}{{ artigo.titulo }}{% endblock %}
+
+{% block content %}
+    <style>
+    .section-container {
+    border: 2px solid #4CAF50;
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.section-container h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.section-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.section-container li {
+    margin-bottom: 10px;
+}
+.comentario-item {
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.comentario-autor {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.comentario-data {
+    color: #888;
+    font-size: 0.9em;
+}
+
+.comentario-texto {
+    margin: 0;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+    </style>
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <h1>{{ artigo.titulo }}</h1>
+        <p>{{ artigo.conteudo }}</p>
+        {% if artigo.imagem %}
+            <img src="{{ artigo.imagem.url }}" style="max-width: 500px; height: auto; display: block; margin: 0 auto;">
+        {% else %}
+            <p>Nenhuma imagem disponível para este artigo.</p>
+        {% endif %}
+        <p>{{ artigo.data_publicacao }}</p>
+        <p>Escrito por: <a href="{% url 'artigos:autor_page' artigo_id=artigo.id autor_id=artigo.autor.id %}">{{ artigo.autor.user }}</a></p>
+
+        <div class="avaliacoes-container section-container">
+            <h2>Avaliações</h2>
+            {% if avaliacoes %}
+                <p><strong>Avaliação média do artigo:</strong> {{ media_avaliacoes }}</p>
+                <ul>
+                    {% for avaliacao in avaliacoes %}
+                        <p><strong>{{ avaliacao.autor.user }}:</strong> {{ avaliacao.valor }}</p>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Este artigo ainda não tem avaliações.</p>
+            {% endif %}
+            {% if request.user.is_authenticated and is_editor %}
+              <div class="button-container">
+               <a href="{% url 'artigos:novo_rating' artigo.id %}">
+                <button>Adicionar Avaliação</button>
+               </a>
+              </div>
+            {% endif %}
+        </div>
+
+        <div class="comentarios-container section-container">
+            <h2>Comentários</h2>
+            {% if comentarios %}
+                <ul>
+                    {% for comentario in comentarios %}
+                        <div class="comentario-item">
+                           <p class="comentario-autor"><strong>{{ comentario.autor.user }}</strong> <span class="comentario-data">({{ comentario.data_comentario }})</span></p>
+                           <p class="comentario-texto">{{ comentario.texto }}</p>
+                        </div>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Este artigo ainda não tem comentários.</p>
+            {% endif %}
+            {% if request.user.is_authenticated and is_editor %}
+              <div class="button-container">
+               <a href="{% url 'artigos:novo_comentario' artigo.id %}">
+                <button>Adicionar Comentário</button>
+               </a>
+              </div>
+            {% endif %}
+        </div>
+    </div>
+    {% if request.user.is_authenticated and is_editor %}
+    <div class="button-container">
+        <a href="{% url 'artigos:edita_artigo' artigo.id %}">
+            <button>Editar informação do Artigo</button>
+        </a>
+        <a href="{% url 'artigos:apaga_artigo' artigo.id %}">
+            <button>Apagar Artigo</button>
+        </a>
+    </div>
+    {% endif %}
+
+    <div class="button-container">
+        <a href="{% url 'artigos:lista_artigos' %}">
+            <button>Voltar para a lista de Artigos</button>
+        </a>
+    </div>
+{% endblock %}
+

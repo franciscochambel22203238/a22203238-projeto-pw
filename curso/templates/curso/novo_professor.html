@@ -1,0 +1,20 @@
+{% extends 'curso/layout.html' %}
+
+{% block title %}Criar Professor{% endblock %}
+
+{% block content %}
+    <h3>Novo Professor</h3>
+
+    <form action="" method="post" enctype='multipart/form-data'>
+    <!-- enctype deve ser definido se houver submissão de ficheiros ou imagens -->
+
+      {% csrf_token %}   <!-- obrigatório nos forms Django -->
+      <table>
+          {{ form }}   <!-- insere input para cada atributo da classe Professor, numa tabela -->
+      </table>
+      <div class="form-buttons">
+            <button onclick="window.location.href='{% url 'professores' %}'">Cancelar</button>
+            <input type="submit" value="Criar Professor">
+      </div>
+    </form>
+{% endblock %}

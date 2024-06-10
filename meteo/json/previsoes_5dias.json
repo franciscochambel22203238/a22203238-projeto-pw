@@ -1,0 +1,744 @@
+{
+  "previsoes": {
+    "Lisboa": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 16,
+        "temp_max": 26,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 17,
+        "temp_max": 27,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 5
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      }
+    ],
+    "Porto": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 3
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 13,
+        "temp_max": 23,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 7
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      }
+    ],
+    "Coimbra": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 16,
+        "temp_max": 26,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 17,
+        "temp_max": 27,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 5
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      }
+    ],
+    "Faro": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 3
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 13,
+        "temp_max": 23,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 7
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      }
+    ],
+    "Braga": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 16,
+        "temp_max": 26,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 17,
+        "temp_max": 27,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 5
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      }
+    ],
+    "Aveiro": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 3
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 13,
+        "temp_max": 23,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 7
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      }
+    ],
+    "Évora": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 16,
+        "temp_max": 26,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 17,
+        "temp_max": 27,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 5
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      }
+    ],
+    "Setúbal": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 3
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 13,
+        "temp_max": 23,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 7
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      }
+    ],
+    "Leiria": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 16,
+        "temp_max": 26,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 17,
+        "temp_max": 27,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 5
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      }
+    ],
+    "Viseu": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 3
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 13,
+        "temp_max": 23,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 7
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      }
+    ],
+    "Guarda": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 16,
+        "temp_max": 26,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 17,
+        "temp_max": 27,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 5
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      }
+    ],
+    "Castelo Branco": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 3
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 13,
+        "temp_max": 23,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 7
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      }
+    ],
+    "Portalegre": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 16,
+        "temp_max": 26,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 17,
+        "temp_max": 27,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 5
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      }
+    ],
+    "Viana do Castelo": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 3
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 13,
+        "temp_max": 23,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 7
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      }
+    ],
+    "Vila Real": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 16,
+        "temp_max": 26,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 17,
+        "temp_max": 27,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 5
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      }
+    ],
+    "Bragança": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 3
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 13,
+        "temp_max": 23,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 7
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      }
+    ],
+    "Beja": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 16,
+        "temp_max": 26,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 17,
+        "temp_max": 27,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 5
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      }
+    ],
+    "Santarém": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 3
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 13,
+        "temp_max": 23,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 7
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      }
+    ],
+    "Madeira": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 16,
+        "temp_max": 26,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 17,
+        "temp_max": 27,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 5
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 1
+      }
+    ],
+    "Açores": [
+      {
+        "data": "2024-06-07",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Nublado",
+        "precipitacao": 3
+      },
+      {
+        "data": "2024-06-08",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-09",
+        "temp_min": 13,
+        "temp_max": 23,
+        "descricao_tempo": "Chuva",
+        "precipitacao": 7
+      },
+      {
+        "data": "2024-06-10",
+        "temp_min": 14,
+        "temp_max": 24,
+        "descricao_tempo": "Parcialmente Nublado",
+        "precipitacao": 2
+      },
+      {
+        "data": "2024-06-11",
+        "temp_min": 15,
+        "temp_max": 25,
+        "descricao_tempo": "Ensolarado",
+        "precipitacao": 0
+      }
+    ]
+  }
+}

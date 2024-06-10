@@ -1,0 +1,54 @@
+{
+  "bands": [
+    {
+      "name": "Led Zeppelin",
+      "photo": "https://cdn.cnn.com/cnn/interactive/2018/10/entertainment/led-zeppelin-cnnphotos/media/01.jpg",
+      "info": "Led Zeppelin foi uma banda britânica de rock formada em Londres em 1968. A banda é composta por Jimmy Page, Robert Plant, John Paul Jones e John Bonham."
+    },
+    {
+      "name": "Queen",
+      "photo": "https://cdn.britannica.com/83/149183-050-25913164/Queen.jpg",
+      "info": "Queen é uma banda britânica de rock formada em Londres em 1970. A banda é composta por Freddie Mercury, Brian May, Roger Taylor e John Deacon."
+    },
+    {
+      "name": "The Beatles",
+      "photo": "https://pyxis.nymag.com/v1/imgs/8a4/813/8d6ca7208aa4b18b5633e94a31091e3743-24-beatles.2x.rhorizontal.w710.jpg",
+      "info": "The Beatles foi uma banda britânica de rock formada em Liverpool em 1960. A banda é composta por John Lennon, Paul McCartney, George Harrison e Ringo Starr."
+    },
+    {
+      "name": "Pink Floyd",
+      "photo": "https://www.udiscovermusic.com/wp-content/uploads/2020/10/Pink-Floyd-GettyImages-74290466.jpg",
+      "info": "Pink Floyd foi uma banda britânica de rock formada em Londres em 1965. A banda é conhecida por suas composições progressivas e psicodélicas."
+    },
+    {
+      "name": "Nirvana",
+      "photo": "https://rockerainsider.com/wp-content/uploads/2022/04/Nirvana-Band-History.jpg",
+      "info": "Nirvana foi uma banda americana de rock formada em Aberdeen, Washington, em 1987. A banda é considerada uma das mais influentes da história do rock."
+    },
+    {
+      "name": "The Rolling Stones",
+      "photo": "https://cdn.britannica.com/41/197341-050-4859B808/The-Rolling-Stones-Bill-Wyman-Keith-Richards-1964.jpg",
+      "info": "The Rolling Stones é uma banda britânica de rock formada em Londres em 1962. A banda é composta por Mick Jagger, Keith Richards, Charlie Watts e Ronnie Wood."
+    },
+    {
+      "name": "AC/DC",
+      "photo": "https://media.newyorker.com/photos/59095f7eebe912338a374b3a/master/w_5223,h_3482,c_limit/Michaud-ACDC.jpg",
+      "info": "AC/DC é uma banda australiana de rock formada em Sydney em 1973. A banda é conhecida por seu estilo de hard rock e performances eletrizantes."
+    },
+    {
+      "name": "Metallica",
+      "photo": "https://m.media-amazon.com/images/M/MV5BZTNmNThlNzUtMTFkMS00ZTk3LWEyNjQtNGUyZWM1OGJhNjQzXkEyXkFqcGdeQXVyMjUyNDk2ODc@._V1_FMjpg_UX1000_.jpg",
+      "info": "Metallica é uma banda americana de heavy metal formada em Los Angeles em 1981. A banda é considerada uma das mais influentes e bem-sucedidas do gênero."
+    },
+    {
+      "name": "U2",
+      "photo": "https://cdn.ontourmedia.io/u2/images/band/band_image03.jpg",
+      "info": "U2 é uma banda irlandesa de rock formada em Dublin em 1976. A banda é composta por Bono, The Edge, Adam Clayton e Larry Mullen Jr."
+    },
+    {
+      "name": "Guns N' Roses",
+      "photo": "https://scpr.brightspotcdn.com/dims4/default/0edc928/2147483647/strip/true/crop/640x583+0+0/resize/880x802!/quality/90/?url=http%3A%2F%2Fscpr-brightspot.s3.us-west-2.amazonaws.com%2Flegacy%2Fi%2Fd209ed114d5699684f140f7910a0a07d%2F5b2c36474488b300092713af-original.jpg",
+      "info": "Guns N' Roses é uma banda americana de hard rock formada em Los Angeles em 1985. A banda é conhecida por seu álbum de estreia 'Appetite for Destruction'."
+    }
+  ]
+}

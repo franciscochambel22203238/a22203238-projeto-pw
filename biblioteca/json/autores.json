@@ -1,0 +1,12 @@
+{
+  "Machado de Assis": {
+    "nacionalidade": "Brasileiro",
+    "ano_nascimento": 1839,
+    "ano_falecimento": 1908
+  },
+  "Eça de Queirós": {
+    "nacionalidade": "Português",
+    "ano_nascimento": 1845,
+    "ano_falecimento": 1900
+  }
+}

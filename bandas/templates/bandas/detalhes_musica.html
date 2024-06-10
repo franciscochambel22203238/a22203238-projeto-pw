@@ -1,0 +1,24 @@
+{% extends 'bandas/layout.html' %}
+
+{% block title %}{{ musica.nome }}{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center;">{{ musica.nome }}</h1>
+    <p style="text-align: center;">Duração: {{ musica.duracao }}</p>
+    <p style="text-align: center;">Spotify Link: <a href="{{ musica.spotify_link }}">{{ musica.spotify_link }}</a></p>
+    {% if request.user.is_authenticated and is_editor %}
+    <div class="back-button">
+        <a href="{% url 'bandas:edita_musica' musica.id %}">
+        <button>Editar informação da Música</button>
+        </a>
+        <a href="{% url 'bandas:apaga_musica' musica.id %}">
+        <button>Apagar Música</button>
+        </a>
+    </div>
+    {% endif %}
+    <div class="back-button">
+        <a href="{% url 'bandas:detalhes_album' musica.album.id %}">
+            <button>Voltar para o Álbum</button>
+        </a>
+    </div>
+{% endblock %}

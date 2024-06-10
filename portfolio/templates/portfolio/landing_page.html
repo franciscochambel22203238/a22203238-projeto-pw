@@ -1,0 +1,84 @@
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+{% block title %}Landing Page{% endblock %}
+
+{% block content %}
+    <style>
+        .show-projects-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #333;
+            background-color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .show-projects-button:hover {
+            background-color: #bbb;
+        }
+
+        .dark-mode .show-projects-button {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .dark-mode .show-projects-button:hover {
+            background-color: #666;
+        }
+    </style>
+<body>
+    <div class="hero-section">
+        <div class="hero-content">
+            <img src="{% static 'portfolio/eu.jpg' %}" alt="Eu" class="hero-image">
+            <h2>Francisco Chambel</h2>
+            <div class="categoria-aplicacoes">
+                <ul>
+                    <li><a href="{% url 'welcome' %}">Menu</a></li>
+                    <li><a href="{% url 'portfolio:mebyme' %}">Sobre mim</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <button id="toggleProjectsButton" class="show-projects-button"><strong>+</strong></button>
+    <div class="container" id="projectsSection" style="display: none;">
+        <div class="section">
+            <div class="section-title">Projetos</div>
+            <div class="section-content">
+                <div class="info-card">
+                    <h2>Artigos</h2>
+                    <p>Podes criar, ver e partilhar artigos sobre uma vasta gama de tópicos. Desde análises de tendências até dicas práticas, os artigos oferecem uma plataforma flexível para expressar as tuas ideias e partilhar conhecimento com outros utilizadores.</p>
+                </div>
+                <div class="info-card">
+                    <h2>Bandas</h2>
+                    <p>Esta aplicação permite explorar e descobrir novas bandas, os seus álbuns e as mais recentes músicas, além de poderes adicionar novas informações sobre as mesmas. É uma forma divertida de te manteres atualizado no campo musical e de encontrar novas músicas para ouvir.</p>
+                </div>
+                <div class="info-card">
+                    <h2>Cursos</h2>
+                    <p>Com esta aplicação, podes consultar uma variedade de cursos online, abrangendo uma vasta gama de tópicos, desde programação e design até línguas e negócios. Podes consultar todas as informações acerca dos cursos, como os seus objetivos, planos de estudos, projetos, áreas científicas, etc...</p>
+                </div>
+                <div class="info-card">
+                    <h2>Meteorologia</h2>
+                    <p>Esta aplicação fornece informações precisas e atualizadas sobre o clima local de Portugal. Podes verificar a previsão do tempo para o dia atual na região de Lisboa e consultar a previsão para os próximos 5 dias para nas mais importantes cidades de Portugal.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toggleProjectsButton = document.getElementById('toggleProjectsButton');
+        const projectsSection = document.getElementById('projectsSection');
+
+        const toggleProjects = () => {
+            const isHidden = projectsSection.style.display === 'none';
+            projectsSection.style.display = isHidden ? 'block' : 'none';
+            toggleProjectsButton.textContent = isHidden ? '-' : '+';
+        };
+
+        toggleProjectsButton.addEventListener('click', toggleProjects);
+    </script>
+</body>
+{% endblock %}

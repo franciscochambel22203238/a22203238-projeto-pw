@@ -1,0 +1,75 @@
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'curso/estilos.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+    {% block style %}{% endblock %}
+        .datetime {
+            color: white;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="datetime" id="datetime"></div>
+        {% if request.user.is_authenticated %}
+         <p class="username"><strong>Username:</strong> <span style="text-decoration: underline;">{{ request.user.username }}</span></p>
+         <div class="auth-buttons">
+            <a href="{% url 'logout' %}">Logout</a>
+         </div>
+        {% else %}
+         <div class="auth-buttons">
+            <a href="{% url 'registo' %}">Register</a>
+            <a href="{% url 'login' %}">Login</a>
+         </div>
+        {% endif %}
+        <div class="welcome-button">
+            <a href="{% url 'portfolio:landing_page' %}">Porfólio</a>
+            <a href="{% url 'welcome' %}">Menu</a>
+        </div>
+        <h1>Aplicação Cursos</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'cursos' %}">Cursos</a></li>
+                <li><a href="{% url 'disciplinas' %}">Disciplinas</a></li>
+                <li><a href="{% url 'projetos' %}">Projetos</a></li>
+                <li><a href="{% url 'areasCientificas' %}">Áreas Científicas</a></li>
+                <li><a href="{% url 'professores' %}">Professores</a></li>
+                <li><a href="{% url 'linguagensProgramacao' %}">Linguagens de Programação</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Programação Web</p>
+    </footer>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const dateTimeString = now.toLocaleString('pt-PT', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById('datetime').textContent = dateTimeString;
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+</body>
+</html>

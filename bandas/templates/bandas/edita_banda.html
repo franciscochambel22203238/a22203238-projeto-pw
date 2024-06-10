@@ -1,0 +1,17 @@
+{% extends 'bandas/layout.html' %}
+
+{% block title %}Editar Banda{% endblock %}
+
+{% block content %}
+    <h3>Editar Banda</h3>
+
+    <form action="{% url 'bandas:edita_banda' banda.id %}" method="post" enctype='multipart/form-data'>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="form-buttons">
+            <button onclick="window.location.href='{% url 'bandas:detalhes_banda' banda.id %}'">Cancelar</button>
+            <input type="submit">
+      </div>
+    </form>
+
+{% endblock %}

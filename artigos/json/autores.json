@@ -1,0 +1,24 @@
+{
+  "autores": [
+    {
+      "username": "Fernando Pessoa",
+      "bio": "Fernando António Nogueira Pessoa foi um poeta, filósofo, dramaturgo, ensaísta, tradutor, publicitário, astrólogo, inventor, empresário, correspondente comercial, crítico literário e comentarista político português."
+    },
+    {
+      "username": "Cristiano Ronaldo",
+      "bio": "Cristiano Ronaldo (1985) é um futebolista português que fez história no Real Madrid. Foi jogador do Manchester United, do Juventus, da Itália e da Seleção Portuguesa. Foi eleito o melhor jogador do mundo em 2008, 2013, 2014, 2016 e 2017. Recebeu cinco bolas de ouro em sua carreira. Atualmente é jogador do Al-Nassr, da Arábia Saudita."
+    },
+    {
+      "username": "The Rock",
+      "bio": "Dwayne Douglas Johnson, também conhecido pelo seu nome no ringue The Rock, é um ator americano, ex-lutador profissional e ex-jogador de futebol americano universitário pela Universidade de Miami, vencendo o campeonato nacional em 1991 pelo Miami Hurricanes."
+    },
+    {
+      "username": "Amália Rodrigues",
+      "bio": "Fadista e atriz, Amália da Piedade Rodrigues nasceu em Lisboa, a 23 de julho de 1920, e faleceu, na mesma cidade, a 6 de outubro de 1999."
+    },
+    {
+      "username": "Francisco Chambel",
+      "bio": "O milhor"
+    }
+  ]
+}

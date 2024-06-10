@@ -1,0 +1,31 @@
+{% extends 'bandas/layout.html' %}
+
+{% block title %}{{ banda.nome }}{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center;">{{ banda.nome }}</h1>
+    <img src="{{ banda.foto.url }}" style="max-width: 500px; height: auto; display: block; margin: 0 auto;">
+    <p style="text-align: center;">{{ banda.informacoes }}</p>
+
+    <h2 style="text-align: center;">Álbuns:</h2>
+    <ul class="lista-item">
+        {% for album in banda.album_set.all %}
+            <li style="margin-bottom: 10px;"><a href="{% url 'bandas:detalhes_album' album.id %}">{{ album.titulo }}</a></li>
+        {% endfor %}
+    </ul>
+    {% if request.user.is_authenticated and is_editor %}
+    <div class="back-button">
+        <a href="{% url 'bandas:edita_banda' banda.id %}">
+            <button>Editar informação da Banda</button>
+        </a>
+        <a href="{% url 'bandas:apaga_banda' banda.id %}">
+            <button>Apagar Banda</button>
+        </a>
+    </div>
+    {% endif %}
+    <p class = "back-button">
+        <a href="{% url 'bandas:lista_bandas' %}" >
+        <button>Voltar para a Lista de Bandas</button>
+        </a>
+    </p>
+{% endblock %}

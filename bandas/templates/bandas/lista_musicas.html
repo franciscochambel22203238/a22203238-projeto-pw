@@ -1,0 +1,21 @@
+{% extends 'bandas/layout.html' %}
+
+{% block title %}Músicas{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center; margin-bottom: 20px;">Músicas ({{musicas|length}})</h1>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+        {% for musica in musicas %}
+            <div style="margin: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; width: 200px; text-align: center;">
+                <a href="{% url 'bandas:musica_page' musica_id=musica.id %}" style="text-decoration: none; color: #ff4c4c;">{{ musica.nome }}</a>
+            </div>
+        {% endfor %}
+    </div>
+    {% if request.user.is_authenticated and is_editor %}
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="{% url 'bandas:nova_musica' %}">
+            <button style="padding: 10px 20px; background-color: #ff4c4c; color: white; border: none; border-radius: 20px; cursor: pointer;">Inserir nova Música</button>
+        </a>
+    </div>
+    {% endif %}
+{% endblock %}

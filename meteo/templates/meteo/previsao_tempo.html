@@ -1,0 +1,84 @@
+{% extends 'meteo/layout.html' %}
+
+{% block title %}Previsão do Tempo{% endblock %}
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+    .detalhes-meteorologia {
+        margin-bottom: 40px;
+    }
+
+    .detalhes-meteorologia h1,
+    .detalhes-meteorologia h2 {
+        text-align: center;
+    }
+
+    .detalhes-meteorologia p {
+        margin-top: 20px;
+    }
+
+    .detalhes-meteorologia ul {
+        padding-left: 20px;
+    }
+
+    .detalhes-meteorologia ul li {
+        margin-top: 10px;
+    }
+
+    .detalhes-meteorologia img {
+        max-width: 150px;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .previsao-item {
+        border: 2px solid #007bff;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 10px;
+        background-color: #e0f7ff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 80%;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 20px;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+{% block content %}
+    <h1>Previsão do Tempo</h1>
+
+    <form id="cidade-form">
+        <label for="cidade">Selecione a cidade:</label>
+        <select name="cidade" id="cidade"></select>
+    </form>
+
+    <div id="previsao-detalhes" class="detalhes-meteorologia"></div>
+
+    <a href="{% url 'previsao_lisboa' %}">
+        <button>Ver Previsão para Lisboa</button>
+    </a>
+{% endblock %}
