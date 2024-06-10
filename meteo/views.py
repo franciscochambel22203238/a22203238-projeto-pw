@@ -1,7 +1,7 @@
 import requests
 from django.shortcuts import render
 from datetime import datetime, timedelta, date
-from django.http import JsonResponse
+from django.http import JsonResponse, Http404
 from .models import Cidade, Previsao, PrevisaoProximos5Dias
 
 def previsao_lisboa(request):
@@ -47,9 +47,13 @@ def lista_cidades(request):
     cidades = Cidade.objects.all().values('nome')
     return JsonResponse(list(cidades), safe=False)
 
-def previsao_hoje(request, cidade_id):
-    cidade = Cidade.objects.get(id=cidade_id)
-    previsao = Previsao.objects.filter(cidade=cidade, data=date.today()).first()
+def previsao_hoje(request, cidade_nome):
+    try:
+        cidade = Cidade.objects.get(nome=cidade_nome)
+    except Cidade.DoesNotExist:
+        raise Http404("Cidade não encontrada")
+
+    previsao = Previsao.objects.filter(cidade=cidade).first()
     if previsao:
         response = {
             "cidade": cidade.nome,
@@ -60,28 +64,35 @@ def previsao_hoje(request, cidade_id):
             "precipitacao": previsao.precipitacao,
         }
     else:
-        response = {}
+        response = {"Erro": "Previsão não encontrada para hoje"}
+
     return JsonResponse(response)
 
-def previsao_proximos_5_dias(request, cidade_id):
-    cidade = Cidade.objects.get(id=cidade_id)
-    data_fim = date.today() + timedelta(days=5)
-    previsoes = PrevisaoProximos5Dias.objects.filter(cidade=cidade, data__range=[date.today(), data_fim])
+def previsao_proximos_5_dias(request, cidade_nome):
+    try:
+        cidade = Cidade.objects.get(nome=cidade_nome)
+    except Cidade.DoesNotExist:
+        raise Http404("Cidade não encontrada")
 
-    previsoes_list = [
-        {
-            "data": previsao.data,
-            "temp_min": previsao.temp_min,
-            "temp_max": previsao.temp_max,
-            "descricao_tempo": previsao.descricao_tempo,
-            "precipitacao": previsao.precipitacao,
+    previsoes = PrevisaoProximos5Dias.objects.filter(cidade=cidade)
+
+    if previsoes.exists():
+        previsoes_list = [
+            {
+                "data": previsao.data,
+                "temp_min": previsao.temp_min,
+                "temp_max": previsao.temp_max,
+                "descricao_tempo": previsao.descricao_tempo,
+                "precipitacao": previsao.precipitacao,
+            }
+            for previsao in previsoes
+        ]
+
+        response = {
+            "cidade": cidade.nome,
+            "previsoes": previsoes_list
         }
-        for previsao in previsoes
-    ]
-
-    response = {
-        "cidade": cidade.nome,
-        "previsoes": previsoes_list
-    }
+    else:
+        response = {"Erro": "Previsões não encontradas para os próximos 5 dias"}
 
     return JsonResponse(response)

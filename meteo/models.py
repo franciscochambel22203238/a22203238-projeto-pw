@@ -15,7 +15,7 @@ class Previsao(models.Model):
     precipitacao = models.FloatField()
 
     def __str__(self):
-        return self.cidade.id
+        return self.cidade.nome
 
 class PrevisaoProximos5Dias(models.Model):
     cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE)

@@ -1,0 +1,111 @@
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+{% block title %}Apresentação Tecnológica{% endblock %}
+
+{% block content %}
+    <style>
+        .presentation-section {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: #bbb;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode .presentation-section {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        .presentation-section h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .dark-mode .presentation-section h2 {
+            color: #fff;
+        }
+
+        .presentation-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .presentation-section li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode .presentation-section li {
+            background-color: #444;
+        }
+
+        .presentation-section li h3 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .dark-mode .presentation-section li h3 {
+            color: #fff;
+        }
+    </style>
+
+<body>
+    <div class="presentation-section">
+        <h2>Apresentação Tecnológica</h2>
+        <p>Esta página tem como objetivo destacar as tecnologias e práticas que utilizei no desenvolvimento do projeto. Em baixo está uma lista das tecnologias usadas, juntamente com uma breve descrição de como cada uma delas foi aplicada ao projeto.</p>
+
+        <ul>
+            <li>
+                <h3>Django</h3>
+                <p>Foi a framework web escolhida para este projeto, aproveitando sua modularidade e eficiência em desenvolver aplicações web de forma rápida e eficaz.</p>
+            </li>
+            <li>
+                <h3>Python</h3>
+                <p>Foi a linguagem de programação principal utilizada para desenvolver este projeto Django. Foi usada em diversos ficheiros como os do Models, Views, URLS, Loaders e até Forms... todos estes incluem '.py' no final do seu nome.</p>
+            </li>
+            <li>
+                <h3>HTML</h3>
+                <p>Foi utilizado para estruturar e dar semântica às páginas criadas, garantindo uma base sólida para o conteúdo apresentado e a disponibilização para navegar entre páginas.</p>
+            </li>
+            <li>
+                <h3>CSS</h3>
+                <p>Foi aplicado para estilizar as páginas, garantindo uma apresentação atraente e responsiva para diferentes dispositivos e modos (claro e escuro). O CSS fortificou a diferença entre as aplicações criadas, cada uma com o seu próprio estilo.</p>
+            </li>
+            <li>
+                <h3>JavaScript</h3>
+                <p>Foi utilizado para adicionar interatividade ao site, como a funcionalidade de alternar a visibilidade das seções, trocar o conteúdo da página, adicionar data e hora atulizada ao segundo, entre outros...</p>
+            </li>
+            <li>
+                <h3>Git</h3>
+                <p>Foi utilizado para o controlo de versão, permitindo a identificação de mudanças e a colaboração eficiente no final do desenvolvimento do projeto.</p>
+            </li>
+            <li>
+                <h3>GitHub</h3>
+                <p>Serviu como plataforma de host do código-fonte, facilitando a colaboração e a gestão do projeto, bem como um histórico de versões do projeto.</p>
+            </li>
+        </ul>
+    </div>
+    <div class="categoria-aplicacoes">
+       <ul>
+         <li><a href="{% url 'portfolio:landing_page' %}">Voltar à Página Principal</a></li>
+       </ul>
+    </div>
+</body>
+<script>
+    const toggleProjectsButton = document.getElementById('toggleProjectsButton');
+    const projectsSection = document.getElementById('projectsSection');
+
+    const toggleProjects = () => {
+        const isHidden = projectsSection.style.display === 'none';
+        projectsSection.style.display = isHidden ? 'block' : 'none';
+        toggleProjectsButton.innerHTML = isHidden ? '<strong>-</strong>' : '<strong>+</strong>';
+    };
+
+    toggleProjectsButton.addEventListener('click', toggleProjects);
+</script>
+{% endblock %}
