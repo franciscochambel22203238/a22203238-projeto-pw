@@ -34,7 +34,7 @@
             min-height: 100vh;
         }
         header {
-            background-color: #ff4c4c; /* Cor vermelha */
+            background-color: #ff4c4c;
             color: #fff;
             padding: 10px 0;
             text-align: center;
@@ -52,11 +52,11 @@
             text-decoration: none;
             padding: 5px 10px;
             border-radius: 3px;
-            background-color: #ff4c4c; /* Cor vermelha */
+            background-color: #ff4c4c;
             transition: background-color 0.3s ease;
         }
         .auth-buttons a:hover {
-            background-color: #b33a3a; /* Vermelho mais escuro */
+            background-color: #b33a3a;
         }
         .username {
             position: absolute;
@@ -82,10 +82,10 @@
             padding: 5px 10px;
             border-radius: 3px;
             transition: background-color 0.3s ease;
-            background-color: #ff4c4c; /* Cor vermelha */
+            background-color: #ff4c4c;
         }
         header nav ul li a:hover {
-            background-color: #b33a3a; /* Vermelho mais escuro */
+            background-color: #b33a3a;
         }
         .lista-item {
             list-style-type: none;
@@ -102,6 +102,15 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             white-space: nowrap;
+        }
+
+        .dark-mode .lista-item li {
+            border: 1px solid white;
+            background-color: black
+        }
+
+        .dark-mode .lista-item li {
+            color:white;
         }
 
         .lista-item li a {
@@ -121,11 +130,11 @@
             text-decoration: none;
             padding: 5px 10px;
             border-radius: 3px;
-            background-color: #ff4c4c; /* Cor vermelha */
+            background-color: #ff4c4c;
             transition: background-color 0.3s ease;
         }
         .welcome-button a:hover {
-            background-color: #b33a3a; /* Vermelho mais escuro */
+            background-color: #b33a3a;
         }
         .content {
             flex: 1;

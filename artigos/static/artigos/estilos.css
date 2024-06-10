@@ -160,6 +160,10 @@
         transition: background-color 0.3s ease;
         }
 
+        .dark-mode .forms-buttons input[type="submit"]{
+            color: black;
+        }
+
         .form-buttons button:hover,
         .form-buttons input[type="submit"]:hover {
           background-color: #45a049;

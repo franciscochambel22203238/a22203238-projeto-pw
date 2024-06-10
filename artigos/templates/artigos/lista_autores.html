@@ -3,6 +3,7 @@
 {% block title %}Autores{% endblock %}
 
 {% block content %}
+<boyd>
     <h1 style="text-align: center; margin-bottom: 20px;">Autores ({{autores|length}})</h1>
     <ul class="lista-item">
         {% for autor in autores %}
@@ -16,4 +17,5 @@
         </a>
     </div>
     {% endif %}
+</boyd>
 {% endblock %}

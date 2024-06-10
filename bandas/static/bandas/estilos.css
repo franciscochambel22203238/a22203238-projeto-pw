@@ -104,6 +104,15 @@
             white-space: nowrap;
         }
 
+        .dark-mode .lista-item li {
+            border: 1px solid white;
+            background-color: black
+        }
+
+        .dark-mode .lista-item li {
+            color:white;
+        }
+
         .lista-item li a {
             text-decoration: none;
             color: #ff4c4c;

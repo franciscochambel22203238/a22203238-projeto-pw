@@ -1,5 +1,5 @@
         body {
-           font-family: 'Fira Sans', sans-serif; /* Alterando a fonte para Fira Sans */
+           font-family: 'Fira Sans', sans-serif;
            font-optical-sizing: auto;
            margin: 0;
            padding: 0;
@@ -8,7 +8,7 @@
            min-height: 100vh;
         }
         header {
-            background-color: #007bff; /* Cor azul */
+            background-color: #007bff;
             color: #fff;
             padding: 10px 0;
             text-align: center;
@@ -26,11 +26,11 @@
             text-decoration: none;
             padding: 5px 10px;
             border-radius: 3px;
-            background-color: #007bff; /* Cor azul */
+            background-color: #007bff;
             transition: background-color 0.3s ease;
         }
         .auth-buttons a:hover {
-            background-color: #0066cc; /* Azul mais escuro */
+            background-color: #0066cc;
         }
         .form-buttons button,
         .form-buttons input[type="submit"] {
@@ -70,11 +70,11 @@
             text-decoration: none;
             padding: 10px 20px;
             border-radius: 5px;
-            background-color: #007bff; /* Cor azul */
+            background-color: #007bff;
             transition: background-color 0.3s ease;
         }
         header nav ul li a:hover {
-            background-color: #0066cc; /* Azul mais escuro */
+            background-color: #0066cc;
         }
         .welcome-button {
             margin-top: 10px;
@@ -85,11 +85,11 @@
             text-decoration: none;
             padding: 5px 10px;
             border-radius: 3px;
-            background-color: #007bff; /* Cor azul */
+            background-color: #007bff;
             transition: background-color 0.3s ease;
         }
         .welcome-button a:hover {
-            background-color: #0066cc; /* Azul mais escuro */
+            background-color: #0066cc;
         }
         .content {
             flex: 1;

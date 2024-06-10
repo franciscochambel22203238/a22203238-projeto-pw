@@ -3,6 +3,7 @@
 {% block title %}Artigos{% endblock %}
 
 {% block content %}
+<body>
     <h1 style="text-align: center; margin-bottom: 20px;">Artigos ({{artigos|length}})</h1>
     <ul class="lista-item">
         {% for artigo in artigos %}
@@ -16,4 +17,5 @@
         </a>
     </div>
     {% endif %}
+</body>
 {% endblock %}

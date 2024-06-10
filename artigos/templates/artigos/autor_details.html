@@ -5,52 +5,77 @@
 {% block content %}
 <style>
     .section-container {
-        border: 2px solid #4CAF50;
-        background-color: #e8f5e9;
-        padding: 15px;
-        border-radius: 5px;
-        margin-top: 20px;
-        width: 100%;
-        max-width: 500px;
-        text-align: left;
-        box-sizing: border-box;
-    }
+    border: 4px solid #4CAF50;
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+    box-sizing: border-box;
+    color: black;
+}
 
-    .section-container h2 {
-        margin-top: 0;
-        margin-bottom: 10px;
-    }
+.dark-mode .section-container {
+    border-color: #45a049;
+    background-color: black; /* Fundo preto no modo escuro */
+    color: white; /* Texto branco no modo escuro */
+}
 
-    .section-container ul {
-        list-style-type: none;
-        padding: 0;
-    }
+.dark-mode .avaliacoes-container{
+    color: white;
+    background-color: black;
+}
 
-    .section-container li {
-        margin-bottom: 10px;
-    }
-    .comentario-item {
-        border: 2px solid #4CAF50;
-        border-radius: 10px;
-        padding: 10px;
-        margin-bottom: 20px;
-    }
+.dark-mode .comentarios-container{
+    color: white;
+    background-color: black;
+}
 
-    .comentario-autor {
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
+.section-container h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
 
-    .comentario-data {
-        color: #888;
-        font-size: 0.9em;
-    }
+.section-container ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-    .comentario-texto {
-        margin: 0;
-        padding: 10px 0;
-        border-top: 1px solid #ddd;
-    }
+.section-container li {
+    margin-bottom: 10px;
+}
+
+.comentario-item {
+    border: 4px solid #4CAF50;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.dark-mode .comentario-item {
+    border-color: #45a049;
+    background-color: #000; /* Fundo preto no modo escuro */
+    color: white; /* Texto branco no modo escuro */
+}
+
+.comentario-autor {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.comentario-data {
+    color: #888;
+    font-size: 0.9em;
+}
+
+.comentario-texto {
+    margin: 0;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
 </style>
     <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
     <h2>{{ autor.user }}</h2>
