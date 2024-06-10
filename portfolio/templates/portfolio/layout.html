@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Estilos globais */
         body {
             margin: 0;
             padding: 0;
@@ -51,8 +50,8 @@
         }
 
         .categoria-login ul li a:hover {
-            color: #333; /* Cor do texto ao passar o mouse no light mode */
-            background-color: rgba(0, 0, 0, 0.1); /* Fundo ligeiramente escuro ao passar o mouse no light mode */
+            color: #333;
+            background-color: rgba(0, 0, 0, 0.1);
         }
 
         .dark-mode .categoria-login ul li a {
@@ -67,7 +66,7 @@
             list-style-type: none;
             padding: 0;
             display: flex;
-            justify-content: center; /* Centraliza os itens horizontalmente */
+            justify-content: center;
             gap: 15px;
         }
 
@@ -284,7 +283,7 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background-image: url('https://exemplo.com/link-da-imagem.jpg');
+        background-image: url('');
         background-size: cover;
         background-position: center;
         color: white;
@@ -376,7 +375,7 @@
                     <li><a href="{% url 'perfil' %}"><i class="fas fa-user"></i> {{ request.user.username }}</a></li>
                     <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                     {% else %}
-                    <li><a href="{% url 'registo' %}"><i class="fas fa-user-plus"></i> Registar</a></li>
+                    <li><a href="{% url 'registo' %}"><i class="fas fa-user-plus"></i> Register</a></li>
                     <li><a href="{% url 'login' %}"><i class="fas fa-user"></i> Login</a></li>
                     {% endif %}
                 </ul>

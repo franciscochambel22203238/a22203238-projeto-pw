@@ -41,6 +41,23 @@
         .toggle-dark-mode:hover {
             background-color: #b33a3a;
         }
+        .toggle-dark-mode2 {
+            font-family: 'Oswald', sans-serif;
+            padding: 10px 20px;
+            background-color: #ff4c4c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: absolute;
+            top: 8px;
+            right: 150px;
+        }
+
+        .toggle-dark-mode2:hover {
+            background-color: #b33a3a;
+        }
         .dark-mode footer {
             background-color: black;
             color: #bbb;
@@ -49,7 +66,12 @@
 </head>
 <body>
     <header>
-        <button class="toggle-dark-mode" onclick="toggleDarkMode()">Dark Mode</button>
+        {% if request.user.is_authenticated %}
+           <button class="toggle-dark-mode" onclick="toggleDarkMode()">Dark Mode</button>
+
+        {% else %}
+           <button class="toggle-dark-mode2" onclick="toggleDarkMode()">Dark Mode</button>
+        {% endif %}
         <div class="datetime" id="datetime"></div>
         {% if request.user.is_authenticated %}
          <p class="username"><strong>Username:</strong> <span style="text-decoration: underline;">{{ request.user.username }}</span></p>

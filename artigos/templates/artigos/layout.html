@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'artigos/estilos.css' %}">
+
     <title>{% block title %}{% endblock %}</title>
     <style>
         {% block style %}{% endblock %}
@@ -32,11 +33,28 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
             position: absolute;
-            top: 8px;
+            top: 7px;
             right: 80px;
         }
 
+        .toggle-dark-mode2 {
+            font-family: 'Playfair Display', serif;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: absolute;
+            top: 7px;
+            right: 150px;
+        }
+
         .toggle-dark-mode:hover {
+            background-color: #45a049;
+        }
+        .toggle-dark-mode2:hover {
             background-color: #45a049;
         }
         .dark-mode .lista-item li {
@@ -61,7 +79,11 @@
 </head>
 <body>
     <header>
-        <button class="toggle-dark-mode" onclick="toggleDarkMode()">Dark Mode</button>
+        {% if request.user.is_authenticated %}
+                <button class="toggle-dark-mode" onclick="toggleDarkMode()">Dark Mode</button>
+        {% else %}
+                <button class="toggle-dark-mode2" onclick="toggleDarkMode()">Dark Mode</button>
+        {% endif %}
         <div class="datetime" id="datetime"></div>
         {% if request.user.is_authenticated %}
         <p class="username"><strong>Username:</strong> <span style="text-decoration: underline;">{{ request.user.username }}</span></p>
